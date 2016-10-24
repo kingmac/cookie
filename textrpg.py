@@ -3,11 +3,26 @@ name = ""
 gold = 0
 left = 0
 right = 0
+def second():
+	global leftwyd
+	if leftwyd == "run":
+		print("You run away from the situation!")
+	elif leftwyd == "look around":
+		print("You look around the area and attempt to find something.")
+	elif leftwyd == "savage":
+		print("You attempt to fight something in the area, you start to fight shrek.")
+
+
 
 def lrchoice():
 	global name, left, right
 	if left == 0:
-		leftwyd = input("What should you do?")
+		leftwyd = input("What should you do?\n")
+		second()
+	elif right == 0:
+		second()
+		rightwyd = input("What should you do?\n")
+
 
 
 
@@ -20,7 +35,7 @@ def choiceAF():
 		left = 0
 		lrchoice()
 	elif right == 1:
-		print("You walk down the path what do you want to do!")
+		print("You walk down the path.")
 		right = 0
 		lrchoice()
 
